@@ -6,4 +6,6 @@ export default createGlobalStyle`
         padding: 0;
         color:${props => (props.darkMode ? 'white' : 'black')};
     }
+    @media screen and (max-width: 320px) {
+        font-size: 14px;
 `

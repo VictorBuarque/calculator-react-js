@@ -11,6 +11,9 @@ export const Container = styled.div`
 export const Content = styled.div`
     background-color: #FFFF;
     width: 60%;
+    @media screen and (max-width: 320px) {
+        width: 100%;
+    }
 `
 export const Row = styled.div`
     display: flex;
@@ -18,9 +21,4 @@ export const Row = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-export const Column = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-`
+

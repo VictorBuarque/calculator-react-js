@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.div`
-  display: inline-block;
+  
   width: 100%;
   height: 75px;
   display: flex;
@@ -16,6 +16,7 @@ export const InputContainer = styled.div`
     border-radius: 2px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 0 10px;
     color: #000;
     font-size: 24px;

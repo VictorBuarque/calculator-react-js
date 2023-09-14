@@ -69,11 +69,17 @@ function App() {
     const squareRoot = Math.sqrt(square);
     setCurrentNumber(squareRoot);
   }
-  const handleCubicRoot = () => {
-    setOperation('cbrt');
-    const number = Number(currentNumber);
-    const cubicRoot = Math.cbrt(number);
-    setCurrentNumber(cubicRoot);
+  const handlePercentage = () => {
+    if (firstNumber==='0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('%')
+    } else {
+      const division = Number(firstNumber) * Number(currentNumber/100);
+      setCurrentNumber(String(division));
+      setOperation('')
+    }
+    
   }
   const handleSquarePower = () => {
     setOperation('**');
@@ -113,8 +119,8 @@ function App() {
           default:
       }
       switch(operation){
-        case 'sqr':
-          handleCubicRoot()
+        case '%':
+          handlePercentage()
           break;
           default:
       }
@@ -132,7 +138,7 @@ function App() {
         <Input value={currentNumber}/>
         <Row>
           <Button label="C" onClick={handleClearNumber}/>
-          <Button label="√3" onClick={handleCubicRoot}/>
+          <Button label="%" onClick={handlePercentage}/>
           <Button label="√2" onClick={handleSquareRoot}/>
           <Button label="2²" onClick={handleSquarePower}/>
         </Row>
